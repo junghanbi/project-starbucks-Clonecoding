@@ -1,0 +1,238 @@
+body{font-family: 'Nanum Gothic', sans-serif;color: #333;font-weight: 400;line-height: 1.4;}
+
+img{display: block;}
+.hidden{display: none;}
+
+a{text-decoration: none;}
+
+.inner{width: 1100px;margin: auto;position: relative;}
+
+
+/* scroll Magic으로 연결할 CSS */
+/* 맨처음 브라우저 로딩시 안보이게 설정 */
+.back-to-position{opacity: 0;transition: all 1s;}
+
+/* 왼쪽 > 오른쪽 등장하는 모션의 시작 위치 */
+.back-to-position.to-right{transform: translateX(-150px);}
+
+/* 오른쪽 > 왼쪽 등장하는 모션의 시작 위치 */
+.back-to-position.to-left{transform: translateX(150px);}
+
+/* show가 추가가되면 실행할 모션 */
+.show .back-to-position{opacity: 1;transform: translateX(0);}
+.show .back-to-position.delay-0{transition-delay: 0s;}
+.show .back-to-position.delay-1{transition-delay: 0.3s;}
+.show .back-to-position.delay-2{transition-delay: 0.6s;}
+.show .back-to-position.delay-3{transition-delay: 0.9s;}
+
+
+/* HEADER 헤더영역-------------------------------------- */
+header{width: 100%;background: #f6f5f0;border-bottom: 1px solid #c3c3c3;position: fixed;top: 0;z-index: 10;border-top: 2px solid #000;}
+header .inner{height: 120px;}
+header .inner h1{position: absolute;top: 0;bottom: 0;margin: auto;height: 75px;}
+header .inner .sub-menu{position: absolute;right: 0;top: 10px;display: flex;}
+header .inner .sub-menu ul.menu{display: flex;}
+header .inner .sub-menu ul.menu li{position: relative;}
+header .inner .sub-menu ul.menu li::before{content: "";display: block;width: 1px;height: 12px;background: #e5e5e5;position: absolute;top: 0;bottom: 0;margin: auto;}
+header .inner .sub-menu ul.menu li a{display: block;padding: 10px;font-size: 12px;color: #656565;}
+header .inner .sub-menu ul.menu li a:hover{color: #000;}
+header .inner .sub-menu ul.menu li:first-child::before{display: none;}
+
+header .inner .sub-menu .search{height: 35px;position: relative;transition: all 0.4s;}
+header .inner .sub-menu .search input{height: 30px;width: 30px;border-radius: 5px;border: 1px solid #ccc;background: #fff;text-indent: 5px;}
+header .inner .sub-menu .search input:focus{width: 150px; border: 1px solid #669900;outline: none;cursor: pointer;}
+
+header .inner .sub-menu .search span{position: absolute;top: 2px;bottom: 0;margin: auto;left: 5px;right: 0;cursor: pointer;}
+header .inner .sub-menu .search.focused span{opacity: 0;}
+
+/* main menu---------- */
+header .inner nav ul.main-menu{display: flex;position: absolute;right: 0;bottom: 0;}
+header .inner nav ul.main-menu > li .item__name{padding: 10px 20px 30px;cursor: pointer;font-size: 14px;}
+header .inner nav ul.main-menu > li:hover .item__name{background: #2c2a29;color: #669900;text-decoration: underline;}
+
+header .inner nav ul.main-menu > li .item__contents{width: 100%;position: fixed;left: 0;display: none;transition: all 0.3s;}
+header .inner nav ul.main-menu > li:hover .item__contents{display: block;}
+
+/* 1층 */
+header .inner nav ul.main-menu > li .item__contents .contents__menu{background: #2c2a29;}
+.item__contents ul.inner{display: flex;padding: 20px 0 40px;justify-content: space-around;height: 280px;}
+.item__contents ul.inner li h4{font-size: 14px;color: #fff;font-weight: bold;padding: 3px 0 15px;}
+.item__contents ul.inner li > ul li{font-size: 12px;color: #999;cursor: pointer;padding: 5px 0;}
+.item__contents ul.inner li > ul li:hover{color: #669900;}
+nts__texture .inner p{color: #669900;margin: 5px 0 15px;}
+
+/* 뱃지영역------------------------------ */
+.badges{position: fixed;top:150px;right: 15px;z-index: 20;}
+.badges div{margin-bottom: 15px;}
+.badges div img{border-radius: 10px;cursor: pointer;}
+
+/* main visual area-------------------------- */
+.visual{width: 100%;background: url(../images/2023_summer1_promotion_bg_1_230426.jpg) no-repeat center;background-size: cover;height: auto;}
+.visual .inner{height: 500px;}
+/* title */
+.visual .inner .title{position: absolute;top: 230px;left: 40px;}
+.visual .inner .title h2 img{width: 80%;}
+.visual .inner .title a.btn{position: absolute;top: 140px;left: 90px;color: #fff; border: 2px solid #fff;padding: 10px;font-size: 13px;border-radius: 5px;width: 95px;text-align: center;height: 10px;line-height: 10px;transition: all 0.5s;}
+.visual .inner .title a.btn:hover{background: #fff;color:#000;text-decoration: underline;font-weight: normal;font-size: 13px;}
+.visual .inner .img-box .cup1.image{width: 30%;position: absolute;top: 235px;right: 480px;}
+.visual .inner .img-box .cup1.text{width: 30%;position: absolute;top: 235px;right: 160px;}
+.visual .inner .img-box .cup2.image{width: 27%;position: absolute;top: 160px;right: 100px;}
+.visual .inner .img-box .cup2.text{width: 23%;position: absolute;top: 160px;left: 370px;}
+
+.visual .fade-in{opacity: 0;}
+
+/* 공지사항 area --------------------------------------------- */
+.notice{overflow: hidden;width: 100%;}
+.notice .notice-line{position: relative;}
+.notice .notice-line .bg-left{position: absolute;top: 0;left: 0;width: 50%;height: 100%;background: #000;}
+.notice .notice-line .bg-right{position: absolute;top: 0;right: 0;width: 50%;height: 100%;background: #f6f5ef;}
+
+.notice .notice-line .inner{display: flex;height: 65px;}
+.notice .notice-line > .inner > .inner__left{width: 60%;height: 100%;background: #000;display: flex;align-items: center;}
+.notice .notice-line > .inner > .inner__left h2{color: #ccc;font-size: 17px;width: 200px;font-weight: 700;}
+.notice .notice-line > .inner > .inner__left .more{display: block;width: 62px;height: 62px;display: flex;align-items: center;margin-right: 20px;}
+.notice .notice-line > .inner > .inner__left .more span{font-size: 35px;color: #fff;}
+
+
+/* 공지사항 : swiper slide */
+.notice .notice-line > .inner > .inner__left .swiper{
+  height: 65px; 
+}
+.notice .notice-line > .inner > .inner__left .swiper .swiper-slide{display: flex;align-items: center;}
+.notice .notice-line > .inner > .inner__left .swiper a{color: #fff;}
+
+.notice .notice-line > .inner > .inner__right{width: 40%;height: 100%;background: #f6f5ef;display: flex;justify-content: center;align-items: center;}
+.notice .notice-line > .inner > .inner__right h2{margin-right: 10px;font-weight: bold;font-size:20px;}
+.notice .notice-line > .inner > .inner__right span{font-size: 35px;cursor: pointer;width: 35px;height: 35px;line-height: 35px;border-radius: 50%;border: 1.5px solid #000;transition: all 0.3s;transform: rotate(180deg);}
+.notice .notice-line > .inner > .inner__right span.down{transform: rotate(0deg);}
+
+
+/* promotion Swiper slide */
+.notice .promotion{height: 670px;background: #f6f5ef;position: relative;transition: height 0.4s;z-index: 1 !important;}
+.notice .promotion.hide{height: 0;}
+
+.notice .promotion .swiper{
+  width: calc(819px * 3 + 20px);
+  height: 600px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: calc((819px * 3 + 20px) / -2); /*가운데정렬*/
+  overflow: hidden;
+  z-index: 1 !important;
+}
+.notice .promotion .swiper .swiper-slide{opacity: 0.5;transition: opacity 1s;position: relative;z-index: 1 !important;}
+.notice .promotion .swiper .swiper-slide > img{z-index: 1 !important;}
+.notice .promotion .swiper .swiper-slide-active{opacity: 1;}
+.notice .promotion .swiper .swiper-slide a{position: absolute;bottom: 50px;left: 0;right: 0;margin: auto;color: #000;border: 2px solid #333;width: 150px;height: 40px;text-align: center;line-height: 40px;border-radius: 5px;font-size: 15px;transition: all 0.5s;}
+.notice .promotion .swiper .swiper-slide a:hover{background: #333;color: #fff;text-decoration: underline;}
+
+.notice .promotion .swiper .swiper-pagination-bullet{
+  background:transparent url(../images/promotion_slide_pager.png);
+  width: 13px;height: 13px;outline: none;background-size: contain;
+}
+.notice .promotion .swiper .swiper-pagination-bullet-active{
+  background: url(../images/promotion_slide_pager_on.png);
+}
+
+.notice .promotion .swiper .swiper-prev,
+.notice .promotion .swiper .swiper-next{
+  width: 42px;height: 42px;outline: none;border: 2px solid #333;
+  position: absolute;top: 270px;z-index: 5;border-radius: 50%;cursor: pointer;display: flex;justify-content: center;align-items: center;  
+}
+.notice .promotion .swiper .swiper-prev{left: 50%;margin-left: -470px;}
+.notice .promotion .swiper .swiper-next{right: 50%;margin-right: -470px;}
+.notice .promotion .swiper .swiper-prev:hover,
+.notice .promotion .swiper .swiper-next:hover{
+  background: #333;color: #fff;
+}
+
+/* rewares */
+.rewards{width: 100%;background-color: #142216;z-index: 10;}
+.rewards .inner{height: 300px;width: 1200px;margin: auto;}
+.rewards .inner h2 img{position: absolute;top: 40px;width: 18%;}
+.rewards .inner .textBox{width: 800px;margin-left: 300px;padding-top: 50px;color: #fff;}
+.rewards .inner .textBox h3{font-size: 30px;font-weight: bold;margin-bottom: 15px;}
+.rewards .inner .textBox p {font-size: 13px;line-height: 1.5;}
+.rewards .inner .textBox .sing-up{position: absolute;right: 120px;top: 100px;width: 100px;height: 40px;border: 2px solid #fff;text-align: center;line-height: 40px;border-radius: 5px;}
+.rewards .inner .textBox .sing-in{position: absolute;right: 240px;top: 100px;width: 100px;height: 40px;background: rgb(12, 111, 12);text-align: center;line-height: 40px;border-radius: 5px;border: 2px solid rgb(12, 111, 12);}
+.rewards .inner .textBox .btn:hover{text-decoration: underline;cursor: pointer;}
+.rewards .inner .textBox .gift{position: absolute;right: 120px;top: 190px;width: 220px;height: 40px;text-align: center;line-height: 40px;border: 2px solid #Fff;border-radius: 5px;}
+.rewards .inner .textBox hr{border: 1px solid #ccc;margin: 20px 0;}
+
+/* season-product */
+.season-product{background: url(../images/2023_summer_promotion_bg.jpg) no-repeat center;background-size: cover;}
+.season-product .inner{height: 400px;}
+.season-product .inner img{width: 30%;position: absolute;left: 230px;}
+.season-product .inner .text-group img{position: absolute;left:530px;top: 120px;width: 30%;}
+.season-product .inner .text-group > div{position: absolute;left:530px;top:250px;width: 130px;height: 40px;border: 2.5px solid rgb(116, 100, 7);text-align: center;line-height: 40px;border-radius: 5px;transition: all 0.5s;}
+.season-product .inner .text-group > div:hover{background: rgb(116, 100, 7);cursor: pointer;}
+.season-product .inner .text-group > div:hover a{color:#fff;text-decoration: underline;}
+.season-product .inner .text-group > div .btn{color:rgb(116, 100, 7);}
+
+
+/* new */
+.new{background: url(../images/230418_pc_reserve_bg.jpg) no-repeat center; background-size: cover;}
+.new .inner{height: 300px;background: url(../images/230418_pc_reserve_coffee_bg.png)no-repeat center;z-index: 2;}
+.new .inner img.coffee{width: 500px;position: absolute;top: 20px;}
+.new .inner .text-group > img{position: absolute;top: 50px;left: 250px;width: 25%;}
+.new .inner .text-group > div{top: 215px;position: absolute;left: 320px;border: 2px solid #fff;width: 130px;height: 40px;text-align: center;line-height: 40px;border-radius: 5px;transition: all 0.5s;}
+.new .inner .text-group > div:hover{background: #fff;cursor: pointer;}
+.new .inner .text-group > div:hover a{color:#000;text-decoration: underline;}
+.new .inner .text-group > div a{color:#fff;}
+
+.pick{background: url(../images/favorite_bg.jpg) no-repeat center fixed;background-size: cover;}
+.pick .inner{height: 600px;}
+.pick .inner .text-group{position: absolute;top: 100px;}
+.pick .inner .text-group > img:first-child{width: 50%;margin-left: 150px;margin-bottom: 30px;}
+.pick .inner .text-group > div{margin-left: 200px;margin-top: 30px;width: 150px;height: 40px;border: 2px solid #fff;text-align: center;line-height: 40px;border-radius: 5px;transition: all 0.5s;}
+.pick .inner .text-group > div:hover{background: #fff;cursor: pointer;}
+.pick .inner .text-group > div:hover a{color:#000; text-decoration: underline;cursor: pointer;}
+.pick .inner .text-group > div > a{color: #fff;}
+.pick .inner img.pick-img{width: 60%;position: absolute;right: 0;top: 60px;}
+
+.reserve{width: 100%;background: url(../images/reserve_bg_pc.png) no-repeat center;background-size: 110%;}
+.reserve .inner{height:400px;}
+.reserve .inner .text-group{position: absolute;top: 100px;left: 200px;}
+.reserve .inner .text-group > div{margin-top: 40px;margin-left: 200px;border: 2px solid #000;width: 130px;height: 40px;line-height: 40px;text-align: center;border-radius: 5px;transition: all 0.5s;}
+.reserve .inner .text-group > div:hover{background: black;cursor: pointer;}
+.reserve .inner .text-group > div:hover a{color:#fff; text-decoration: underline;}
+.reserve .inner .text-group > div a{color:black}
+.reserve .inner .reserve-img{position: absolute;top: 0;right: 100px;}
+
+.store{background: url(../images/find_store_bg.jpg) center;position: relative;overflow: hidden;}
+.store .inner{height: 400px;}
+.store .inner .img2{position: absolute;top: 150px;left: 200px;}
+.store .inner .img3{position: absolute;top:-50px;left: 0;right: 0;margin: auto;}
+.store .inner .text-group{position: absolute;top: 100px;right: 100px;}
+.store .inner .text-group .text2{margin: 20px 0;}
+.store .inner .text-group > div{width: 130px;height: 40px;border: 2px solid #000;text-align: center;line-height: 40px;border-radius: 5px;transition: all 0.5s;}
+.store .inner .text-group > div:hover{background: #000;cursor: pointer;}
+.store .inner .text-group > div:hover a{color: #fff;text-decoration: underline;}
+.store .inner .text-group > div a{color:black}
+.store .inner .img4{position: absolute;bottom: 0;right: 0;}
+
+footer{width: 100%;background: #333;color:#fff;position: relative;}
+footer .inner{height: 600px;}
+footer .inner .list-up{display: flex;padding-top: 50px;height: 300px;}
+footer .inner .list-up li{width: 200px;}
+footer .inner .list-up li div{padding-bottom: 20px;font-weight: bold;}
+footer .inner .list-up li a{color: #fff;height: 30px;width: 200px;display: block;font-size: 15px;}
+footer .inner .list-up li a:hover{text-decoration: underline;}
+footer .inner > img {position: absolute;top: 110px;transform: rotate(90deg);right: 30px;}
+footer .inner .award-list{display: flex;width: 100%;height: 100px;background: #222;padding: 0 20px;}
+footer .inner .award-list li{margin: auto;}
+footer .inner .footer-nav{display: flex;justify-content: space-between;margin-top: 30px;margin-bottom: 10px;}
+footer .inner .footer-nav li::after{content: "|";opacity: 30%;}
+footer .inner .footer-nav li:last-child:after{content: "";}
+footer .inner .footer-nav li a{color:#fff;font-size: 10px;padding: 10px;}
+footer .inner .footer-nav li a:hover{text-decoration: underline;}
+footer .inner .footer-nav li:nth-child(1) a,
+footer .inner .footer-nav li:nth-child(4) a
+{color:#669900;font-weight: bold;}
+footer .inner .btn{display: flex;justify-content: center;margin-bottom: 20px;}
+footer .inner .btn li:nth-child(2){padding: 0 10px;}
+footer .inner .btn li div{width:120px;height: 30px;border: 2px solid #fff;border-radius: 3px;line-height: 30px;text-align: center;}
+footer .inner .btn li div a{color:#fff;font-size: 12px;}
+footer .inner .btn li div a:hover{text-decoration: underline;}
+footer .inner address{color: #666;font-size: 13px;display: flex;justify-content: center;}
