@@ -50,7 +50,6 @@ new Swiper(".notice-slide", {
   loop : true,   // 슬라이드 반복 여부
   direction : 'vertical'
 });
-
 //가로 : swiper
 new Swiper('.awards .swiper', {
   loop: true,
@@ -60,20 +59,17 @@ new Swiper('.awards .swiper', {
   },
   spaceBetween: 30,
   loopAdditionalSlides : 1, 
-
   // Navigation arrows
   navigation: {
     nextEl: '.awards .swiper-next', //이전버튼
     prevEl: '.awards .swiper-prev', //다음버튼
   },
-
 });
 //promotion 부분 숨겼다 보였다 하는 기능
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
 let isHidePromotion = false; //슬라이드 숨김
 console.log(isHidePromotion);
-
 //토글 버튼
 promotionToggleBtn.addEventListener('click', function(){
   isHidePromotion = !isHidePromotion; //슬라이드 숨김 값을 반대로 할당
@@ -84,5 +80,4 @@ promotionToggleBtn.addEventListener('click', function(){
     promotionEl.classList.remove('hide');
   }
 });
-
   ```
